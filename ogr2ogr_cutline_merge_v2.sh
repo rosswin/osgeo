@@ -14,5 +14,5 @@ do
   #add the basename to the field
   ogrinfo $f -dialect SQLite -sql "UPDATE $basename SET filename = '$basename'"
   #send the cutline with new field to the master_cutline_index
-  ogr2ogr -update -append kahoolawe_positive_tile_index.shp $f
+  ogr2ogr -update -append niihau_gto_raw_merge.shp $f
 done

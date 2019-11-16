@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import os
 import multiprocessing
 import logging
@@ -43,11 +40,11 @@ def return_extent(in_img):
 
 
 # START EDITING #####################################
-file_list = r"/media/ross/ssd/00_2015_DAR_marinedebris/maui/04_window_retile/jpg_list.txt"
-out_dir = r"/media/ross/ssd/00_2015_DAR_marinedebris/maui/tiles_shp/"
+file_list = r"/media/ross/ssd/03_niihau_dar2015/02_gdalwarp_resample/tif_list.txt"
+out_dir = r"/media/ross/ssd/03_niihau_dar2015/cutlines/03_gwr_tiles"
 
-out_path_gpkg = os.path.join(out_dir, 'maui_positive_tile_index.gpkg')
-
+out_path_gpkg = os.path.join(out_dir, 'niihau_clean_tile_index.gpkg')
+log_name = os.path.join(out_dir, 'log.txt')
 out_crs = {'init':'epsg:26904'}
 
 #### STOP EDITING ###################################
@@ -66,7 +63,7 @@ with open(file_list, 'r') as f:
 
 pool=multiprocessing.Pool()
 
-results=pool.map(return_extent, in_paths[:10])
+results=pool.map(return_extent, in_paths)
 
 pool.close()
 pool.join()
