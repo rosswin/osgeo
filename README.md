@@ -4,7 +4,24 @@ Random widgets for working with osgeo data. Bulit and tested on Ubuntu 18.04 and
 
 ## fast_tindex.py
 
+A script that generates a vector tile index from folders of georeferenced raster imagery. Typically used to see the boundaries of satellite imagery in GIS software. However, this script only reads header information and does it in parallel. So it is very fast. 
 
+If you inputed the tiles of coastal imagery displayed below, you would get the red checkerboxes in this example:
+
+![gpkg_output](/images/fast_tindex_example.png)
+
+### FLAGS:
+* -f File List:  A comma-delimted txt/csv list of absolute file paths, one file per line. Best generated using the command:
+`find </absolute/path/to/your/input/directory> -name <.your_ext> >> file_list.txt`
+  * Example: -e gpkg
+  * Example: -e shp
+* -o Out File : Absolute path to where you would like your tile index geopackage stored. Must contain the file name in the path AND end in .gpkg. GPKGS ONLY!!!!
+  * Example: ~/mydir/mygpkg.gpkg
+  * Example: myshp.shp
+* -e EPSG CODE: The EPSG code of your input image data. Only one CRS is supported, and the script does not check for this. Must be in the format 'epsg:<XXXXX>' where <XXXXX> is a 5 digit EPSG code (no <>, just numbers). See epsg.io for more info. 
+  * Example: filename
+  * Example: orig_fname
+ * -l Log File: Include this flag to write a logfile alongside your geopackage.
 
 ## vector_merge.sh
 
