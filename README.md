@@ -1,6 +1,6 @@
 # osgeo
 
-Random widgets for working with osgeo data. Bulit and tested on Ubuntu 18.04 and Python 3.
+Random widgets for working with open source geospatial data. Built and tested on Ubuntu 18.04 and Python 3.
 
 ## fast_tindex.py
 
