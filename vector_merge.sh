@@ -3,6 +3,8 @@
 # WRITTEN BY W. ROSS WINANS
 # OCT 2019
 
+#NOTE July 2020: if using GDAL 2.2+ then checkout ogrmerge.py. It has all of this functionality and more. This script could become useful again if it used multiprocessing. 
+
 #TODO:
 #1. ogr2ogr spits out a ton of warnings and errors. Is there a way to mute these... or even maybe fix them?
 #2. Add verbosity flag.
